@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="page"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -37,41 +40,120 @@
     ></script>
   </head>
 
-  <body>
+  <body class="page__body">
     <header class="header">
-      <div class="header__top">
+      <div class="top-bar">
         <a
-          class="header__logo"
           href="#"
+          class="top-bar__logo"
         >
           <img
-            src="assets/images/logo.png"
+            src="assets/images/logo_white.png"
             alt="MyBike logo"
           />
         </a>
 
-        <div class="header__icons">
+        <div class="top-bar__icons">
           <a
             class="icon icon--phone"
             href="#"
           ></a>
           <a
             class="icon icon--burger"
-            href="#"
+            href="#menu"
           ></a>
         </div>
       </div>
       <h1 class="header__title">Take the Streets</h1>
     </header>
 
-    <aside></aside>
-
+    <aside
+      class="page__menu menu"
+      id="menu"
+    >
+      <div class="top-bar">
+        <a
+          href="#"
+          class="top-bar__logo"
+        >
+          <img
+            src="assets/images/logo_black.png"
+            alt="MyBike logo"
+          />
+        </a>
+        <a
+          class="icon icon--close"
+          href="#"
+        ></a>
+      </div>
+      <nav class="menu__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#home"
+            >
+              home
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#about-us"
+            >
+              about us
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#compare_bikes"
+            >
+              compare bikes
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#details"
+            >
+              details
+            </a>
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#contacts"
+            >
+              contacts
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        class="menu__phone-num"
+        href="tel:+1 234 5555-55-55"
+      >
+        +1 234 5555-55-55
+      </a>
+      <a class="menu__book-ride">Book a test ride</a>
+    </aside>
     <main>
-      <section class="move-free">
+      <section
+        class="move-free"
+        id="about-us"
+      >
         <h2>Move Free</h2>
+        <p>
+          Shift your ride, not gears. Find the fastest way to move in the city
+          as the bike adapts intuitively to power the speed you need.
+        </p>
       </section>
 
-      <section class="compare-bikes">
+      <section
+        class="compare-bikes"
+        id="compare-bikes"
+      >
         <h2>Compare bikes</h2>
       </section>
 
