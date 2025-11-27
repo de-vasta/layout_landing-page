@@ -1,17 +1,28 @@
+@use 'vars' as *;
+
 .icon {
   display: block;
-  height: 24px;
-  width: 24px;
-}
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
-.icon--phone {
-  background-image: url('../../assets/icons/phone_icon.png');
-}
+  height: $icon-size-s;
+  width: $icon-size-s;
 
-.icon--burger {
-  background-image: url('../../assets/icons/burger_icon.png');
-}
+  @media (min-width: 576px) {
+    height: $icon-size-m;
+    width: $icon-size-m;
+  }
 
-.icon--close {
-  background-image: url('../../assets/icons/close_icon.png');
+  &--phone {
+    background-image: url('/src/assets/icons/phone_icon.png');
+  }
+
+  &--burger {
+    background-image: url('/src/assets/icons/burger_icon.png');
+  }
+
+  &--close {
+    background-image: url('/src/assets/icons/close_icon.png');
+  }
 }
