@@ -1,4 +1,5 @@
 @use 'vars' as *;
+@use '../utils/mixins';
 
 .header {
   box-sizing: border-box;
@@ -11,6 +12,10 @@
   display: flex;
   flex-direction: column;
 
+  @include mixins.on-tablet {
+    height: 100vh;
+  }
+
   &__title {
     margin-inline: auto;
     margin-top: 270px;
@@ -19,21 +24,47 @@
     letter-spacing: -1.5px;
     font-weight: 700;
     font-size: 36px;
+
+    @include mixins.on-tablet {
+      font-size: 64px;
+      margin-top: 306px;
+    }
   }
 }
 
 .top-bar {
   padding: $indent-vertical-s $indent-horizontal-s;
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
-  &__logo {
+  @include mixins.on-tablet {
+    padding: $indent-vertical-m $indent-horizontal-m;
+  }
+
+  &__logo-link {
     display: flex;
+  }
+
+  &__logo {
+    width: 130px;
+    height: 38px;
+
+    @include mixins.hover-transition(transform, scale(1.2));
+
+    @include mixins.on-tablet {
+      width: 187px;
+      height: 56px;
+    }
   }
 
   &__icons {
     display: flex;
     gap: $icon-size-s;
+
+    @include mixins.on-tablet {
+      gap: $icon-size-m;
+    }
   }
 }
