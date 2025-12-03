@@ -18,20 +18,20 @@
   }
 
   &--phone {
-    background-image: url('/src/assets/icons/phone_icon.png');
+    background-image: url('/src/assets/icons/phone_icon.svg');
   }
 
   &--burger {
     @include mixins.hover-transition(transform, scale(1.4) rotateY(-360deg));
 
-    background-image: url('/src/assets/icons/burger_icon.png');
+    background-image: url('/src/assets/icons/burger_icon.svg');
 
     &:hover {
-      background-image: url('/src/assets/icons/burger-icon-hover.png');
+      background-image: url('/src/assets/icons/burger-icon-hover.svg');
     }
   }
 
   &--close {
-    background-image: url('/src/assets/icons/close_icon.png');
+    background-image: url('/src/assets/icons/close_icon.svg');
   }
 }

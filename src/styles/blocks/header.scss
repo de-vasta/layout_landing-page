@@ -4,7 +4,7 @@
 .header {
   box-sizing: border-box;
   height: calc(480 / 568 * 100vh);
-  background-image: url('/src/assets/images/header_bg_744.png');
+  background-image: url('/src/assets/images/header_bg.png');
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
@@ -29,19 +29,20 @@
       font-size: 64px;
       margin-top: 306px;
     }
+
+    @include mixins.on-pc {
+      margin-top: 300px;
+    }
   }
 }
 
 .top-bar {
-  padding: $indent-vertical-s $indent-horizontal-s;
   display: flex;
-
   justify-content: space-between;
   align-items: center;
+  padding-block: $indent-vertical-s;
 
-  @include mixins.on-tablet {
-    padding: $indent-vertical-m $indent-horizontal-m;
-  }
+  @include mixins.padding-inline;
 
   &__logo-link {
     display: flex;

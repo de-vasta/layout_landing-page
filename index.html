@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyBike</title>
-    <link rel="stylesheet" href="src/styles/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="src/styles/index.scss" />
     <link
       rel="shortcut icon"
       href="./src/assets/icons/favicon.png"
@@ -28,7 +32,7 @@
         <a href="#" class="top-bar__logo-link">
           <img
             class="top-bar__logo"
-            src="src/assets/images/logo_white.png"
+            src="src/assets/images/logo_white.svg"
             alt="MyBike logo"
           />
         </a>
@@ -44,7 +48,7 @@
         <a href="#" class="top-bar__logo-link">
           <img
             class="top-bar__logo"
-            src="src/assets/images/logo_black.png"
+            src="src/assets/images/logo_black.svg"
             alt="MyBike logo"
           />
         </a>
@@ -76,19 +80,23 @@
         <a class="menu__book-ride">Book a test ride</a>
       </div>
     </aside>
-    <main>
-      <section class="move-free" id="about-us">
-        <h2>Move Free</h2>
-        <p>
+    <main class="main">
+      <section class="section move-free" id="about-us">
+        <h2 class="section__title move-free__title">Move Free</h2>
+        <p class="move-free__context">
           Shift your ride, not gears. Find the fastest way to move in the city
           as the bike adapts intuitively to power the speed you need.
         </p>
       </section>
-      <section class="compare-bikes" id="compare-bikes">
-        <h2>Compare bikes</h2>
+      <section class="section compare-bikes" id="compare-bikes">
+        <h2 class="section__title">Compare bikes</h2>
       </section>
-      <section class="details"><h2>The details</h2></section>
-      <section class="contact-us"><h2>Contact us</h2></section>
+      <section class="section details">
+        <h2 class="section__title">The details</h2>
+      </section>
+      <section class="section contact-us">
+        <h2 class="section__title">Contact us</h2>
+      </section>
     </main>
     <footer></footer>
   </body>

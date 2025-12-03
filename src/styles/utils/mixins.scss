@@ -6,6 +6,24 @@
   }
 }
 
+@mixin on-pc {
+  @media (min-width: $pc-min-width) {
+    @content;
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: $indent-horizontal-s;
+
+  @include on-tablet {
+    padding-inline: $indent-horizontal-m;
+  }
+
+  @include on-pc {
+    padding-inline: $indent-horizontal-l;
+  }
+}
+
 @mixin hover-transition($property, $property-value) {
   transition: $property 0.4s cubic-bezier(0.65, 0.05, 0.35, 1);
   &:hover {

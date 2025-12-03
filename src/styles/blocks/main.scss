@@ -1,0 +1,68 @@
+@use '../utils/mixins' as mixins;
+
+.main {
+  --padding-top: 60px;
+
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+
+  padding-top: var(--padding-top);
+
+  @mixin on-tablet {
+    --padding-top: 120px;
+  }
+
+  @include mixins.padding-inline;
+
+  p {
+    margin: 0;
+  }
+
+  .section {
+    margin-bottom: 92px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 120px;
+    }
+
+    &__title {
+      margin: 0;
+      margin-bottom: 48px;
+      font-size: 32px;
+      letter-spacing: -1.5px;
+      line-height: 100%;
+
+      @include mixins.on-tablet {
+        font-size: 48px;
+      }
+
+      @include mixins.on-tablet {
+        font-size: 64px;
+      }
+    }
+  }
+
+  .move-free {
+    @include mixins.on-tablet {
+      margin-bottom: 132px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+    }
+
+    @include mixins.on-pc {
+      margin-bottom: 164px;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__context {
+      font-weight: 500;
+      font-size: 23px;
+    }
+  }
+}

@@ -27,11 +27,11 @@
 
   &__content {
     margin-top: 24px;
-    padding-left: $indent-horizontal-s;
+
+    @include mixins.padding-inline;
 
     @include mixins.on-tablet {
       margin-top: 8px;
-      padding-left: $indent-horizontal-m;
     }
   }
 
@@ -81,7 +81,7 @@
     text-decoration: none;
     color: inherit;
 
-    @include mixins.bottom-underline {
+    @include mixins.bottom-underline($size: 2px) {
       transition: transform 0.3s ease-out;
       transform: scaleX(0);
       transform-origin: right;
