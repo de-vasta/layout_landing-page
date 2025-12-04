@@ -30,7 +30,9 @@
     &__title {
       margin: 0;
       margin-bottom: 48px;
+      text-align: center;
       font-size: 32px;
+      text-transform: capitalize;
       letter-spacing: -1.5px;
       line-height: 100%;
 
@@ -38,17 +40,17 @@
         font-size: 48px;
       }
 
-      @include mixins.on-tablet {
+      @include mixins.on-pc {
         font-size: 64px;
       }
     }
   }
 
   .move-free {
+    @include mixins.page-grid;
+
     @include mixins.on-tablet {
       margin-bottom: 132px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       column-gap: 24px;
     }
 
@@ -57,12 +59,103 @@
     }
 
     &__title {
+      grid-column: span var(--columns);
+
+      @include mixins.on-tablet {
+        grid-column: span 3;
+      }
+
+      @include mixins.on-pc {
+        grid-column: span 5;
+      }
+
+      text-align: start;
       margin-bottom: 32px;
     }
 
-    &__context {
+    &__descr {
+      grid-column: span var(--columns);
+
+      @include mixins.on-tablet {
+        grid-column: span 3;
+      }
+
+      @include mixins.on-pc {
+        grid-column: span 6;
+      }
+
       font-weight: 500;
       font-size: 23px;
+    }
+  }
+
+  .compare-bikes {
+    @include mixins.on-pc {
+      margin-bottom: 144px;
+    }
+
+    &__title {
+      @include mixins.on-pc {
+        margin-bottom: 56px;
+      }
+    }
+
+    .bikes {
+      @include mixins.page-grid;
+
+      row-gap: 40px;
+
+      @include mixins.on-tablet {
+        row-gap: 48px;
+      }
+
+      .bike {
+        grid-column: span var(--columns);
+
+        @include mixins.on-tablet {
+          grid-column: 2 / -2;
+        }
+
+        @include mixins.on-pc {
+          grid-column: span 4;
+        }
+
+        &__image {
+          width: 100%;
+          margin-bottom: 32px;
+        }
+
+        &__title {
+          font-weight: 700;
+          font-size: 24px;
+
+          margin: 0;
+          margin-bottom: 8px;
+        }
+
+        &__price {
+          margin: 0;
+
+          font-weight: 700;
+          font-size: 24px;
+        }
+
+        &__descr {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .details {
+    &__title {
+      @include mixins.on-tablet {
+        margin-bottom: 64px;
+      }
+
+      @include mixins.on-pc {
+        margin-bottom: 48px;
+      }
     }
   }
 }
