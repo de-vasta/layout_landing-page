@@ -7,11 +7,19 @@
   margin: 0 auto;
   font-weight: 400;
   font-size: 16px;
+  background-color: $primary-color;
 
   padding-top: var(--padding-top);
+  margin-bottom: 120px;
 
-  @mixin on-tablet {
+  @include mixins.on-tablet {
     --padding-top: 120px;
+
+    margin-bottom: 102px;
+  }
+
+  @include mixins.on-pc {
+    margin-bottom: 164px;
   }
 
   @include mixins.padding-inline;
@@ -56,6 +64,7 @@
 
 .section {
   margin-bottom: 92px;
+  padding-bottom: 18px;
 
   @include mixins.on-tablet {
     margin-bottom: 120px;
@@ -253,5 +262,96 @@
     @include mixins.on-pc {
       grid-column: span 4 / -5;
     }
+  }
+}
+
+.contacts {
+  &__content {
+    @include mixins.page-grid;
+  }
+
+  &__form {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+
+    @include mixins.on-tablet {
+      grid-column: span 3;
+    }
+
+    @include mixins.on-pc {
+      grid-column: span 5;
+    }
+  }
+
+  &__info {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include mixins.on-tablet {
+      grid-column: span 2;
+    }
+
+    @include mixins.on-pc {
+      grid-column: 8 / span 3;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  &__link {
+    font-weight: 500;
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}
+
+.form {
+  %abstract-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid transparent;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    &::placeholder {
+      color: #7e7e83;
+    }
+
+    &:hover {
+      border: 1px solid #d5d7de;
+    }
+
+    &:focus {
+      border: 1px solid #292929;
+    }
+  }
+
+  &__input {
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 40px;
+
+    @extend %abstract-input;
+  }
+
+  &__txtarea {
+    margin-bottom: 32px;
+    border-radius: 16px;
+    max-width: 100%;
+
+    @extend %abstract-input;
+  }
+
+  &__btn {
+    width: 100%;
   }
 }
