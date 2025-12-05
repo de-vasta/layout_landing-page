@@ -46,6 +46,10 @@
   align-items: center;
   padding-block: $indent-vertical-s;
 
+  position: sticky; /* to keep cross always visible */
+  top: 0;
+  z-index: 1;
+
   @include mixins.padding-inline;
 
   &__logo-link {

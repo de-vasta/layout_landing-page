@@ -19,6 +19,8 @@
 
 .menu {
   height: 100vh;
+  overflow: auto; /* to scroll the menu if needed */
+  z-index: 2;
 
   background-color: $side-menu-bg-color;
   color: $primary-color;

@@ -13,9 +13,10 @@
   &__body {
     margin: 0;
     background-color: $primary-color;
+    max-width: 100%;
   }
 
   &:has(.page__menu:target) {
-    overflow: hidden;
+    overflow: hidden; // not to scroll the page
   }
 }

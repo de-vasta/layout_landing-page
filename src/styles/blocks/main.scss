@@ -310,6 +310,24 @@
     font-weight: 500;
     color: $secondary-color;
     text-decoration: none;
+
+    background-image: linear-gradient($secondary-color, $secondary-color);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+
+    transition:
+      background-size 400ms ease-in-out,
+      color 500ms ease-in-out;
+
+    &--address {
+      background-position: center;
+    }
+
+    &:hover {
+      background-size: 100% 100%;
+      color: $primary-color;
+    }
   }
 }
 
@@ -317,7 +335,7 @@
   %abstract-input {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid transparent;
+    border: 0.25em solid transparent;
 
     font-size: 14px;
     line-height: 20px;
@@ -327,11 +345,11 @@
     }
 
     &:hover {
-      border: 1px solid #d5d7de;
+      border-color: #d5d7de;
     }
 
     &:focus {
-      border: 1px solid #292929;
+      border-color: #292929;
     }
   }
 
@@ -354,4 +372,10 @@
   &__btn {
     width: 100%;
   }
+}
+
+.image-link {
+  display: flex;
+
+  @include mixins.hover-transition(transform, scale(1.1));
 }
