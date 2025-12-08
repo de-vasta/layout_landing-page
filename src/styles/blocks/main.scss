@@ -217,9 +217,9 @@
       }
 
       &__images {
-        @include mixins.page-grid;
-
         margin-bottom: 16px;
+
+        @include mixins.page-grid;
       }
 
       &__image {
@@ -228,6 +228,11 @@
         object-fit: cover;
         object-position: center;
         grid-column: span 1;
+        border-radius: 0.2rem;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease-in-out,
+          opacity 0.3s ease-in-out;
 
         &--short {
           @include mixins.on-tablet {
@@ -247,6 +252,11 @@
           @include mixins.on-pc {
             grid-column: span 8;
           }
+        }
+
+        &:hover {
+          transform: scale(0.98);
+          opacity: 0.66;
         }
       }
     }

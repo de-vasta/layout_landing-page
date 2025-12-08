@@ -1,6 +1,8 @@
 @use 'vars' as *;
 @use '../utils/mixins';
 
+$offset: 8px;
+
 .page__menu {
   display: flex;
   flex-direction: column;
@@ -19,7 +21,7 @@
 
 .menu {
   height: 100vh;
-  overflow: auto; /* to scroll the menu if needed */
+  overflow: auto;
   z-index: 2;
 
   background-color: $side-menu-bg-color;
@@ -35,6 +37,10 @@
     @include mixins.on-tablet {
       margin-top: 8px;
     }
+
+    @include mixins.on-pc {
+      font-weight: 700;
+    }
   }
 
   &__nav {
@@ -43,10 +49,8 @@
 
   &__phone-num {
     display: block;
-    text-decoration: none;
     color: inherit;
     line-height: 27px;
-    margin-bottom: 16px;
   }
 
   &__book-ride {
@@ -57,7 +61,30 @@
     line-height: 16px;
     letter-spacing: 2px;
 
-    @include mixins.bottom-underline;
+    @include mixins.bottom-underline {
+      transform: scaleY(1);
+      transform-origin: bottom right;
+      transition: transform 400ms ease-out;
+    }
+  }
+
+  &__phone {
+    color: inherit;
+    text-decoration: none;
+
+    display: flex;
+    width: fit-content;
+    padding-bottom: $offset;
+
+    flex-direction: column;
+    gap: 16px;
+
+    &:hover {
+      .menu__book-ride::after {
+        transform: scaleY(3);
+        transform-origin: bottom left;
+      }
+    }
   }
 }
 

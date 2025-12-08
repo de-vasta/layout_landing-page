@@ -44,7 +44,7 @@
 }
 
 @mixin hover-transition($property, $property-value) {
-  transition: $property 0.4s $transition-time;
+  transition: $property 0.35s $transition-time;
   &:hover {
     #{$property}: $property-value;
   }
@@ -58,7 +58,7 @@
     bottom: $offset;
     height: $size;
     width: 100%;
-    background-color: $color;
+    background: $color;
     z-index: -1;
     @content;
   }
